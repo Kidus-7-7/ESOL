@@ -1,0 +1,1782 @@
+1. Navbar Component
+Navbar.jsx
+jsx
+import React from 'react'; // Import React
+import { Link } from 'react-router-dom'; // Import Link for routing
+import './Navbar.css'; // Import CSS for Navbar
+
+const Navbar = () => {
+  return (
+    <nav className="navbar"> {/* Navbar container */}
+      <ul className="nav-links"> {/* List for navigation links */}
+        <li><Link to="/about-us">About Us</Link></li> {/* Link to About Us page */}
+        <li><Link to="/services">Services</Link></li> {/* Link to Services page */}
+        <li><Link to="/portfolio">Portfolio</Link></li> {/* Link to Portfolio page */}
+        <li><Link to="/contact-us">Contact Us</Link></li> {/* Link to Contact Us page */}
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar; // Export Navbar component
+Navbar.css
+css
+.navbar { /* Navbar container styles */
+  background-color: #333;
+  padding: 1rem;
+}
+
+.nav-links { /* Styles for the list of nav links */
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.nav-links li a { /* Styles for the nav links */
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .nav-links {
+    flex-direction: column;
+  }
+}
+2. Hero Header Component
+HeroHeader.jsx
+jsx
+import React from 'react'; // Import React
+import { motion } from 'framer-motion'; // Import motion for animations
+import './HeroHeader.css'; // Import CSS for HeroHeader
+
+const HeroHeader = () => {
+  return (
+    <header className="hero-header"> {/* Hero header container */}
+      <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}> {/* Animated headline */}
+        Captivating Headline
+      </motion.h1>
+      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }}> {/* Animated introduction */}
+        Brief introduction to ESOL
+      </motion.p>
+      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1 }}> {/* Animated mission statement */}
+        Our mission statement
+      </motion.p>
+    </header>
+  );
+};
+
+export default HeroHeader; // Export HeroHeader component
+HeroHeader.css
+css
+.hero-header { /* Hero header container styles */
+  text-align: center;
+  padding: 2rem;
+  background: #f4f4f4;
+}
+
+.hero-header h1 { /* Headline styles */
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.hero-header p { /* Paragraph styles */
+  font-size: 1.2rem;
+  color: #666;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .hero-header h1 {
+    font-size: 2rem;
+  }
+  .hero-header p {
+    font-size: 1rem;
+  }
+}
+3. Features List Component
+FeaturesList.jsx
+jsx
+import React from 'react'; // Import React
+import './FeaturesList.css'; // Import CSS for FeaturesList
+
+const FeaturesList = () => {
+  return (
+    <section className="features-list"> {/* Features list container */}
+      <h2>Our Key Offerings</h2> {/* Section heading */}
+      <ul> {/* List of offerings */}
+        <li>ERP Solutions</li> {/* List item */}
+        <li>VDI Solutions</li>
+        <li>3D Virtualization (V-Next)</li>
+        <li>Business Intelligence (BI) Tools</li>
+        <li>IT Consultancy</li>
+        <li>Office IT Supplies</li>
+      </ul>
+    </section>
+  );
+};
+
+export default FeaturesList; // Export FeaturesList component
+FeaturesList.css
+css
+.features-list { /* Features list container styles */
+  background: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.features-list h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.features-list ul { /* Styles for the list */
+  list-style: none;
+  padding: 0;
+}
+
+.features-list li { /* Styles for each list item */
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .features-list h2 {
+    font-size: 1.5rem;
+  }
+  .features-list li {
+    font-size: 1rem;
+  }
+}
+4. CTA Section Component
+CTASection.jsx
+jsx
+import React from 'react'; // Import React
+import { motion } from 'framer-motion'; // Import motion for animations
+import './CTASection.css'; // Import CSS for CTASection
+
+const CTASection = () => {
+  return (
+    <section className="cta-section"> {/* CTA section container */}
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="cta-button"
+      >
+        Contact Us
+      </motion.button>
+      <p>Get expert advice and start your project with ESOL today!</p>
+    </section>
+  );
+};
+
+export default CTASection; // Export CTASection component
+CTASection.css
+css
+.cta-section { /* CTA section container styles */
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.cta-button { /* CTA button styles */
+  background: #ff6600;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.cta-section p { /* Paragraph styles */
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+  }
+  .cta-section p {
+    font-size: 0.9rem;
+  }
+}
+5. Footer Component
+Footer.jsx
+jsx
+import React from 'react'; // Import React
+import './Footer.css'; // Import CSS for Footer
+
+const Footer = () => {
+  return (
+    <footer className="footer"> {/* Footer container */}
+      <p>© 2024 ESOL. All rights reserved.</p>
+      <p>Privacy Policy | Terms of Service</p>
+      <div className="social-links"> {/* Social media links */}
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer; // Export Footer component
+
+Footer.css
+
+.footer { /* Footer container styles */
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer p { /* Paragraph styles */
+  margin: 0.5rem 0;
+}
+
+.social-links { /* Social media links container */
+  margin-top: 1rem;
+}
+
+.social-links a { /* Styles for each social media link */
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .social-links {
+    flex-direction: column;
+  }
+  .social-links a {
+    margin: 0.5rem 0;
+  }
+}
+
+6. About Section Component
+AboutSection.jsx
+import React from 'react'; // Import React
+import './AboutSection.css'; // Import CSS for AboutSection
+
+const AboutSection = () => {
+  return (
+    <section className="about-section"> {/* About section container */}
+      <h2>About Us</h2> {/* Section heading */}
+      <p>Company history</p> {/* Company history */}
+      <p>Founding story</p> {/* Founding story */}
+      <p>Vision for the future</p> {/* Vision for the future */}
+      <p>Core values</p> {/* Core values */}
+    </section>
+  );
+};
+
+export default AboutSection; // Export AboutSection component
+
+AboutSection.css
+css
+.about-section { /* About section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.about-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p { /* Paragraph styles */
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+  .about-section p {
+    font-size: 1rem;
+  }
+}
+7. Team Section Component
+TeamSection.jsx
+jsx
+import React from 'react'; // Import React
+import './TeamSection.css'; // Import CSS for TeamSection
+
+const TeamSection = () => {
+  return (
+    <section className="team-section"> {/* Team section container */}
+      <h2>Our Team</h2> {/* Section heading */}
+      <div className="team-members"> {/* Container for team members */}
+        <div className="team-member"> {/* Single team member */}
+          <img src="member1.jpg" alt="Team Member 1" /> {/* Member photo */}
+          <p>Member 1 - Role</p> {/* Member role */}
+          <p>Brief biography</p> {/* Member bio */}
+        </div>
+        <div className="team-member">
+          <img src="member2.jpg" alt="Team Member 2" />
+          <p>Member 2 - Role</p>
+          <p>Brief biography</p>
+        </div>
+        {/* Repeat for other team members */}
+      </div>
+    </section>
+  );
+};
+
+export default TeamSection; // Export TeamSection component
+TeamSection.css
+css
+.team-section { /* Team section container styles */
+  background: #f4f4f4;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.team-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.team-members { /* Container for team members */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team-member { /* Single team member styles */
+  margin: 1rem;
+  text-align: center;
+}
+
+.team-member img { /* Member photo styles */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.team-member p { /* Paragraph styles */
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .team-members {
+    flex-direction: column;
+  }
+  .team-member {
+    margin: 1rem 0;
+  }
+  .team-member img {
+    width: 100px;
+    height: 100px;
+  }
+}
+8. Benefits Section Component
+BenefitsSection.jsx
+jsx
+import React from 'react'; // Import React
+import './BenefitsSection.css'; // Import CSS for BenefitsSection
+
+const BenefitsSection = () => {
+  return (
+    <section className="benefits-section"> {/* Benefits section container */}
+      <h2>Benefits of Choosing ESOL</h2> {/* Section heading */}
+      <ul> {/* List of benefits */}
+        <li>Experience</li> {/* Benefit item */}
+        <li>Innovative solutions</li>
+        <li>Customer-centric approach</li>
+        <li>Industry-specific expertise</li>
+      </ul>
+    </section>
+  );
+};
+
+export default BenefitsSection; // Export BenefitsSection component
+BenefitsSection.css
+css
+.benefits-section { /* Benefits section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.benefits-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.benefits-section ul { /* List styles */
+  list-style: none;
+  padding: 0;
+}
+
+.benefits-section li { /* List item styles */
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */ 
+.benefits-section h2 {
+     font-size: 1.5rem; 
+     } .benefits-section li { font-size: 1rem; }}
+
+StatsSection.jsx
+jsx
+import React from 'react'; // Import React
+import './StatsSection.css'; // Import CSS for StatsSection
+
+const StatsSection = () => {
+  return (
+    <section className="stats-section"> {/* Stats section container */}
+      <h2>Our Achievements</h2> {/* Section heading */}
+      <div className="stats-container"> {/* Container for stats */}
+        <div className="stat-item"> {/* Single stat item */}
+          <h3>100+</h3> {/* Statistic */}
+          <p>Successful Projects</p> {/* Description */}
+        </div>
+        <div className="stat-item">
+          <h3>98%</h3>
+          <p>Client Satisfaction</p>
+        </div>
+        <div className="stat-item">
+          <h3>50+</h3>
+          <p>Industry Awards</p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default StatsSection; // Export StatsSection component
+StatsSection.css
+css
+.stats-section { /* Stats section container styles */
+  background: #f4f4f4;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.stats-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.stats-container { /* Container for stats */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-item { /* Single stat item styles */
+  margin: 1rem;
+  text-align: center;
+}
+
+.stat-item h3 { /* Statistic styles */
+  font-size: 2.5rem;
+  color: #ff6600;
+}
+
+.stat-item p { /* Description styles */
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .stats-container {
+    flex-direction: column;
+  }
+  .stat-item {
+    margin: 1rem 0;
+  }
+  .stat-item h3 {
+    font-size: 2rem;
+  }
+  .stat-item p {
+    font-size: 1rem;
+  }
+}
+10. Testimonial Section Component
+TestimonialSection.jsx
+jsx
+import React from 'react'; // Import React
+import './TestimonialSection.css'; // Import CSS for TestimonialSection
+
+const TestimonialSection = () => {
+  return (
+    <section className="testimonial-section"> {/* Testimonial section container */}
+      <h2>What Our Clients Say</h2> {/* Section heading */}
+      <div className="testimonials"> {/* Container for testimonials */}
+        <div className="testimonial"> {/* Single testimonial */}
+          <p>"ESOL provided us with excellent service and support. Highly recommend!"</p> {/* Testimonial text */}
+          <p>- Client Name</p> {/* Client name */}
+        </div>
+        <div className="testimonial">
+          <p>"Their innovative solutions transformed our business processes."</p>
+          <p>- Client Name</p>
+        </div>
+        {/* Repeat for other testimonials */}
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialSection; // Export TestimonialSection component
+TestimonialSection.css
+css
+.testimonial-section { /* Testimonial section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.testimonial-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonials { /* Container for testimonials */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.testimonial { /* Single testimonial styles */
+  margin: 1rem;
+  max-width: 300px;
+  text-align: left;
+}
+
+.testimonial p { /* Paragraph styles */
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .testimonials {
+    flex-direction: column;
+  }
+  .testimonial {
+    margin: 1rem 0;
+  }
+}
+11. Portfolio List Section Component
+PortfolioListSection.jsx
+jsx
+import React from 'react'; // Import React
+import './PortfolioListSection.css'; // Import CSS for PortfolioListSection
+
+const PortfolioListSection = () => {
+  return (
+    <section className="portfolio-list-section"> {/* Portfolio list section container */}
+      <h2>Our Portfolio</h2> {/* Section heading */}
+      <div className="portfolio-items"> {/* Container for portfolio items */}
+        <div className="portfolio-item"> {/* Single portfolio item */}
+          <img src="project1.jpg" alt="Project 1" /> {/* Project thumbnail */}
+          <p>Project 1 - Brief Description</p> {/* Project description */}
+        </div>
+        <div className="portfolio-item">
+          <img src="project2.jpg" alt="Project 2" />
+          <p>Project 2 - Brief Description</p>
+        </div>
+        {/* Repeat for other projects */}
+      </div>
+    </section>
+  );
+};
+
+export default PortfolioListSection; // Export PortfolioListSection component
+PortfolioListSection.css
+css
+.portfolio-list-section { /* Portfolio list section container styles */
+  background: #f4f4f4;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.portfolio-list-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.portfolio-items { /* Container for portfolio items */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-item { /* Single portfolio item styles */
+  margin: 1rem;
+  text-align: left;
+}
+
+.portfolio-item img { /* Project thumbnail styles */
+  width: 100%;
+  height: auto;
+}
+
+.portfolio-item p { /* Project description styles */
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .portfolio-items {
+    flex-direction: column;
+  }
+  .portfolio-item {
+    margin: 1rem 0;
+  }
+}
+12. Feature Section Component
+FeatureSection.jsx
+jsx
+import React from 'react'; // Import React
+import './FeatureSection.css'; // Import CSS for FeatureSection
+
+const FeatureSection = () => {
+  return (
+    <section className="feature-section"> {/* Feature section container */}
+      <h2>Featured Project</h2> {/* Section heading */}
+      <div className="feature-details"> {/* Container for feature details */}
+        <img src="featured-project.jpg" alt="Featured Project" /> {/* Featured project image */}
+        <div className="details"> {/* Details container */}
+          <h3>Project Title</h3> {/* Project title */}
+          <p>Challenges faced</p> {/* Challenges faced */}
+          <p>Solutions implemented</p> {/* Solutions implemented */}
+          <p>Outcomes achieved</p> {/* Outcomes achieved */}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FeatureSection; // Export FeatureSection component
+FeatureSection.css
+css
+.feature-section { /* Feature section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.feature-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-details { /* Container for feature details */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.feature-details img { /* Featured project image styles */
+  max-width: 50%;
+  height: auto;
+  margin: 1rem;
+}
+
+.details { /* Details container styles */
+  max-width: 50%;
+  text-align: left;
+}
+
+.details h3 { /* Project title styles */
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.details p { /* Paragraph styles */
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .feature-details {
+    flex-direction: column;
+  }
+  .feature-details img,
+  .details {
+    max-width: 100%;
+  }
+}
+13. Gallery Section Component
+GallerySection.jsx
+jsx
+import React from 'react'; // Import React
+import './GallerySection.css'; // Import CSS for GallerySection
+
+const GallerySection = () => {
+  return (
+    <section className="gallery-section"> {/* Gallery section container */}
+      <h2>Project Gallery</h2> {/* Section heading */}
+      <div className="gallery-items"> {/* Container for gallery items */}
+        <div className="gallery-item"> {/* Single gallery item */}
+          <img src="gallery1.jpg" alt="Gallery 1" /> {/* Gallery image */}
+        </div>
+        <div className="gallery-item">
+          <img src="gallery2.jpg" alt="Gallery 2" />
+        </div>
+        {/* Repeat for other gallery items */}
+      </div>
+    </section>
+  );
+};
+
+export defualt GallerySection;
+
+GallerySection.css
+css
+.gallery-section { /* Gallery section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.gallery-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.gallery { /* Gallery container styles */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-item { /* Single gallery item styles */
+  margin: 1rem;
+  text-align: center;
+}
+
+.gallery-item img { /* Gallery item image styles */
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.gallery-item p { /* Gallery item description styles */
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .gallery-item img {
+    width: 150px;
+    height: 150px;
+  }
+  .gallery-item p {
+    font-size: 0.9rem;
+  }
+}
+10. Stats Section Component
+StatsSection.jsx
+jsx
+import React from 'react'; // Import React
+import './StatsSection.css'; // Import CSS for StatsSection
+
+const StatsSection = () => {
+  return (
+    <section className="stats-section"> {/* Stats section container */}
+      <h2>Our Achievements</h2> {/* Section heading */}
+      <ul> {/* List of stats */}
+        <li>Number of successful projects: 100+</li> {/* Stat item */}
+        <li>Client satisfaction rates: 95%</li>
+        <li>Industry awards received: 10</li>
+      </ul>
+    </section>
+  );
+};
+
+export default StatsSection; // Export StatsSection component
+StatsSection.css
+css
+.stats-section { /* Stats section container styles */
+  background: #f4f4f4;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.stats-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.stats-section ul { /* List styles */
+  list-style: none;
+  padding: 0;
+}
+
+.stats-section li { /* List item styles */
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .stats-section h2 {
+    font-size: 1.5rem;
+  }
+  .stats-section li {
+    font-size: 1rem;
+  }
+}
+11. Testimonial Section Component
+TestimonialSection.jsx
+jsx
+import React from 'react'; // Import React
+import './TestimonialSection.css'; // Import CSS for TestimonialSection
+
+const TestimonialSection = () => {
+  return (
+    <section className="testimonial-section"> {/* Testimonial section container */}
+      <h2>What Our Clients Say</h2> {/* Section heading */}
+      <div className="testimonials"> {/* Testimonials container */}
+        <div className="testimonial"> {/* Single testimonial */}
+          <p>"ESOL provided us with outstanding service."</p> {/* Testimonial text */}
+          <p>- Client 1</p> {/* Client name */}
+        </div>
+        <div className="testimonial">
+          <p>"Their team is highly professional and skilled."</p>
+          <p>- Client 2</p>
+        </div>
+        {/* Repeat for other testimonials */}
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialSection; // Export TestimonialSection component
+TestimonialSection.css
+css
+.testimonial-section { /* Testimonial section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.testimonial-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonials { /* Testimonials container styles */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.testimonial { /* Single testimonial styles */
+  margin: 1rem;
+  text-align: center;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.testimonial p { /* Paragraph styles */
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .testimonials {
+    flex-direction: column;
+  }
+  .testimonial {
+    margin: 1rem 0;
+  }
+}
+12. Contact Form Component
+ContactForm.jsx
+jsx
+import React from 'react'; // Import React
+import './ContactForm.css'; // Import CSS for ContactForm
+
+const ContactForm = () => {
+  return (
+    <section className="contact-form-section"> {/* Contact form section container */}
+      <h2>Contact Us</h2> {/* Section heading */}
+      <form className="contact-form"> {/* Contact form */}
+        <input type="text" placeholder="Name" required /> {/* Name input */}
+        <input type="email" placeholder="Email" required /> {/* Email input */}
+        <input type="tel" placeholder="Phone" required /> {/* Phone input */}
+        <textarea placeholder="Message" required></textarea> {/* Message textarea */}
+        <button type="submit">Submit</button> {/* Submit button */}
+      </form>
+    </section>
+  );
+};
+
+export default ContactForm; // Export ContactForm component
+ContactForm.css
+css
+.contact-form-section { /* Contact form section container styles */
+  background: #f4f4f4;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-form-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form { /* Contact form styles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea { /* Input and textarea styles */
+  width: 80%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button { /* Submit button styles */
+  background: #333;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+  }
+}
+13. Live Chat Support Component
+LiveChatSupport.jsx
+jsx
+import React from 'react'; // Import React
+import './LiveChatSupport.css'; // Import CSS for LiveChatSupport
+
+const LiveChatSupport = () => {
+  return (
+    <section className="live-chat-section"> {/* Live chat section container */}
+      <h2>Live Chat Support</h2> {/* Section heading */}
+      <div className="chat-box"> {/* Chat box container */}
+        <p>Chat with our support team now!</p> {/* Chat prompt */}
+      </div>
+    </section>
+  );
+};
+
+export default LiveChatSupport; // Export LiveChatSupport component
+LiveChatSupport.css
+css
+.live-chat-section { /* Live chat section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.live-chat-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.chat-box { /* Chat box container styles */
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.chat-box p { /* Paragraph styles */
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .chat-box {
+    width: 100%;
+  }
+  .chat-box p {
+    font-size: 1rem;
+  }
+}
+14. Secure Login Component
+SecureLogin.jsx
+jsx
+import React from 'react'; // Import React
+import './SecureLogin.css'; // Import CSS for SecureLogin
+
+const SecureLogin = () => {
+  return (
+    <section className="secure-login-section"> {/* Secure login section container */}
+      <h2>Login</h2> {/* Section heading */}
+      <form className="login-form"> {/* Login form */}
+        <input type="text" placeholder="Username" required /> {/* Username input */}
+        <input type="password" placeholder="Password" required /> {/* Password input */}
+        <a href="/forgot-password" className="forgot-password">Forgot Password?</a> {/* Forgot password link */}
+        <button type="submit">Login</button> {/* Login button */}
+      </form>
+    </section>
+  );
+};
+
+export default SecureLogin; // Export SecureLogin component
+SecureLogin.css
+css
+.secure-login-section { /* Secure login section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.secure-login-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.login-form { /* Login form styles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form input { /* Input styles */
+  width: 80%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form .forgot-password { /* Forgot password link styles */
+  margin-top: 0.5rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-form button { /* Login button styles */
+  background: #333;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .login-form input {
+    width: 100%;
+  }
+}
+15. Dashboard Component
+Dashboard.jsx
+jsx
+import React from 'react'; // Import React
+import './Dashboard.css'; // Import CSS for Dashboard
+
+const Dashboard = () => {
+  return (
+    <section className="dashboard-section"> {/* Dashboard section container */}
+      <h2>Dashboard</h2> {/* Section heading */}
+      <p>Welcome to your personalized dashboard</p> {/* Welcome message */}
+      <div className="dashboard-content"> {/* Dashboard content container */}
+        <div className="dashboard-item"> {/* Single dashboard item */}
+          <h3>Personalized Content</h3> {/* Item heading */}
+          <p>Access your personalized content here.</p> {/* Item description */}
+        </div>
+        <div className="dashboard-item">
+          <h3>Services</h3>
+          <p>Access the services you need.</p>
+        </div>
+        <div className="dashboard-item">
+          <h3>Account Settings</h3>
+          <p>Update your account settings here.</p>
+        </div>
+        {/* Repeat for other dashboard items */}
+      </div>
+    </section>
+  );
+};
+
+export default Dashboard; // Export Dashboard component
+Dashboard.css
+css
+.dashboard-section { /* Dashboard section container styles */
+  background: #f4f4f4;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dashboard-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-content { /* Dashboard content container styles */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.dashboard-item { /* Single dashboard item styles */
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.dashboard-item h3 { /* Item heading styles */
+  font-size: 1.5rem;
+}
+
+.dashboard-item p { /* Item description styles */
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .dashboard-content {
+    flex-direction: column;
+  }
+  .dashboard-item {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+16. Support Tickets Component
+SupportTickets.jsx
+jsx
+import React from 'react'; // Import React
+import './SupportTickets.css'; // Import CSS for SupportTickets
+
+const SupportTickets = () => {
+  return (
+    <section className="support-tickets-section"> {/* Support tickets section container */}
+      <h2>Support Tickets</h2> {/* Section heading */}
+      <div className="support-tickets-content"> {/* Support tickets content container */}
+        <div className="ticket-item"> {/* Single ticket item */}
+          <h3>Submit a Ticket</h3> {/* Item heading */}
+          <p>Submit a new support ticket for assistance.</p> {/* Item description */}
+        </div>
+        <div className="ticket-item">
+          <h3>View Ticket Status</h3>
+          <p>Check the status of your existing support tickets.</p>
+        </div>
+        {/* Repeat for other ticket items */}
+      </div>
+    </section>
+  );
+};
+
+export default SupportTickets; // Export SupportTickets component
+SupportTickets.css
+css
+.support-tickets-section { /* Support tickets section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.support-tickets-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.support-tickets-content { /* Support tickets content container styles */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.ticket-item { /* Single ticket item styles */
+  background: #f4f4f4;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.ticket-item h3 { /* Item heading styles */
+  font-size: 1.5rem;
+}
+
+.ticket-item p { /* Item description styles */
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .support-tickets-content {
+    flex-direction: column;
+  }
+  .ticket-item {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+17. Billing Information Component
+BillingInformation.jsx
+jsx
+import React from 'react'; // Import React
+import './BillingInformation.css'; // Import CSS for BillingInformation
+
+const BillingInformation = () => {
+  return (
+    <section className="billing-information-section"> {/* Billing information section container */}
+      <h2>Billing Information</h2> {/* Section heading */}
+      <div className="billing-content"> {/* Billing content container */}
+        <div className="billing-item"> {/* Single billing item */}
+          <h3>View Invoices</h3> {/* Item heading */}
+          <p>Access and download your invoices.</p> {/* Item description */}
+        </div>
+        <div className="billing-item">
+          <h3>Make Payments</h3>
+          <p>Pay your bills securely online.</p>
+        </div>
+        {/* Repeat for other billing items */}
+      </div>
+    </section>
+  );
+};
+
+export default BillingInformation; // Export BillingInformation component
+BillingInformation.css
+css
+.billing-information-section { /* Billing information section container styles */
+  background: #f4f4f4;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.billing-information-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.billing-content { /* Billing content container styles */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.billing-item { /* Single billing item styles */
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.billing-item h3 { /* Item heading styles */
+  font-size: 1.5rem;
+}
+
+.billing-item p { /* Item description styles */
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .billing-content {
+    flex-direction: column;
+  }
+  .billing-item {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+18. Events Calendar Component
+EventsCalendar.jsx
+jsx
+import React from 'react'; // Import React
+import './EventsCalendar.css'; // Import CSS for EventsCalendar
+
+const EventsCalendar = () => {
+  return (
+    <section className="events-calendar-section"> {/* Events calendar section container */}
+      <h2>Events Calendar</h2> {/* Section heading */}
+      <div className="events-content"> {/* Events content container */}
+        <div className="event-item"> {/* Single event item */}
+          <h3>Upcoming Webinars</h3> {/* Item heading */}
+          <p>Join our next webinar on innovative solutions.</p> {/* Item description */}
+        </div>
+        <div className="event-item">
+          <h3>Seminars</h3>
+          <p>Attend our seminars to gain industry insights.</p>
+        </div>
+        <div className="event-item">
+          <h3>Other Events</h3>
+          <p>Check out our other events and workshops.</p>
+        </div>
+        <form className="event-registration"> {/* Event registration form */}
+          <h3>Event Registration</h3> {/* Form heading */}
+          <input type="text" placeholder="Name" required /> {/* Name input */}
+          <input type="email" placeholder="Email" required /> {/* Email input */}
+          <button type="submit">Register</button> {/* Register button */}
+        </form>
+      </div>
+    </section>
+  );
+};
+
+export default EventsCalendar; // Export EventsCalendar component
+EventsCalendar.css
+css
+.events-calendar-section { /* Events calendar section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.events-calendar-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.events-content { /* Events content container styles */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.event-item { /* Single event item styles */
+  background: #f4f4f4;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.event-item h3 { /* Item heading styles */
+  font-size: 1.5rem;
+}
+
+.event-item p { /* Item description styles */
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.event-registration { /* Event registration form styles */
+  background: #e8e8e8;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.event-registration h3 { /* Form heading styles */
+  font-size: 1.5rem;
+}
+
+.event-registration input { /* Input styles */
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.event-registration button { /* Register button styles */
+  background: #333;
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .event-item,
+  .event-registration {
+    width: 100%;
+  }
+}
+19. Resource Center Component
+ResourceCenter.jsx
+jsx
+import React from 'react'; // Import React
+import './ResourceCenter.css'; // Import CSS for ResourceCenter
+
+const ResourceCenter = () => {
+  return (
+    <section className="resource-center-section"> {/* Resource center section container */}
+      <h2>Resource Center</h2> {/* Section heading */}
+      <div className="resource-content"> {/* Resource content container */}
+        <div className="resource-item"> {/* Single resource item */}
+          <h3>Whitepapers</h3> {/* Item heading */}
+          <p>Access our latest whitepapers on industry trends.</p> {/* Item description */}
+        </div>
+        <div className="resource-item">
+          <h3>Case Studies</h3>
+          <p>Read our success stories and case studies.</p>
+        </div>
+        <div className="resource-item">
+          <h3>E-books</h3>
+          <p>Download our informative e-books.</p>
+        </div>
+        <div className="resource-item">
+          <h3>Videos</h3>
+          <p>Watch our educational and promotional videos.</p>
+        </div>
+        <div className="resource-item">
+          <h3>Downloadable Content</h3>
+          <p>Get access to downloadable resources and materials.</p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ResourceCenter; // Export ResourceCenter component
+ResourceCenter.css
+css
+.resource-center-section { /* Resource center section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.resource-center-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.resource-content { /* Resource content container styles */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.resource-item { /* Single resource item styles */
+  background: #f4f4f4;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.resource-item h3 { /* Item heading styles */
+  font-size: 1.5rem;
+}
+
+.resource-item p { /* Item description styles */
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .resource-item {
+    width: 100%;
+  }
+}
+20. FAQs Component
+FAQs.jsx
+jsx
+import React from 'react'; // Import React
+import './FAQs.css'; // Import CSS for FAQs
+
+const FAQs = () => {
+  return (
+    <section className="faqs-section"> {/* FAQs section container */}
+      <h2>Frequently Asked Questions</h2> {/* Section heading */}
+      <div className="faqs-content"> {/* FAQs content container */}
+        <div className="faq-item"> {/* Single FAQ item */}
+          <h3>General Questions</h3> {/* Item heading */}
+          <p>Find answers to general questions about ESOL.</p> {/* Item description */}
+        </div>
+        <div className="faq-item">
+          <h3>ERP Solutions</h3>
+          <p>Get information about our ERP solutions.</p>
+        </div>
+        <div className="faq-item">
+          <h3>VDI Solutions</h3>
+          <p>Learn more about our VDI solutions.</p>
+        </div>
+        <div className="faq-item">
+          <h3>3D Virtualization (V-Next)</h3>
+          <p>Discover our 3D Virtualization services.</p>
+        </div>
+        <div className="faq-item">
+          <h3>BI Tools</h3>
+          <p>Understand our Business Intelligence tools.</p>
+        </div>
+        <div className="faq-item">
+          <h3>IT Consultancy</h3>
+          <p>Read about our IT consultancy services.</p>
+        </div>
+        <div className="faq-item">
+          <h3>Office IT Supplies</h3>
+          <p>Explore our range of office IT supplies.</p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FAQs; // Export FAQs component
+FAQs.css
+css
+.faqs-section { /* FAQs section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.faqs-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.faqs-content { /* FAQs content container styles */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.faq-item { /* Single FAQ item styles */
+  background: #f4f4f4;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.faq-item h3 { /* Item heading styles */
+  font-size: 1.5rem;
+}
+
+.faq-item p { /* Item description styles */
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .faq-item {
+    width: 100%;
+  }
+}
+21. Newsletter Signup Component
+NewsletterSignup.jsx
+jsx
+import React from 'react'; // Import React
+import './NewsletterSignup.css'; // Import CSS for NewsletterSignup
+
+const NewsletterSignup = () => {
+  return (
+    <section className="newsletter-signup-section"> {/* Newsletter signup section container */}
+      <h2>Subscribe to Our Newsletter</h2> {/* Section heading */}
+      <form className="signup-form"> {/* Signup form */}
+        <input type="text" placeholder="Name" required /> {/* Name input */}
+        <input type="email" placeholder="Email" required /> {/* Email input */}
+        <button type="submit">Submit</button> {/* Submit button */}
+      </form>
+    </section>
+  );
+};
+
+export default NewsletterSignup; // Export NewsletterSignup component
+NewsletterSignup.css
+css
+.newsletter-signup-section { /* Newsletter signup section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.newsletter-signup-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.signup-form { /* Signup form styles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-form input { /* Input styles */
+  width: 80%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-form button { /* Submit button styles */
+  background: #333;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .signup-form input {
+    width: 100%;
+  }
+}
+Testimonials and Reviews Component
+TestimonialsAndReviews.jsx
+jsx
+import React from 'react'; // Import React
+import './TestimonialsAndReviews.css'; // Import CSS for TestimonialsAndReviews
+
+const TestimonialsAndReviews = () => {
+  return (
+    <section className="testimonials-reviews-section"> {/* Testimonials and reviews section container */}
+      <h2>Client Feedback</h2> {/* Section heading */}
+      <div className="reviews-content"> {/* Reviews content container */}
+        <div className="review-item"> {/* Single review item */}
+          <p>"ESOL provided us with outstanding service."</p> {/* Review text */}
+          <p>- Client 1</p> {/* Client name */}
+        </div>
+        <div className="review-item">
+          <p>"Their team is highly professional and skilled."</p>
+          <p>- Client 2</p>
+        </div>
+        {/* Repeat for other reviews */}
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialsAndReviews; // Export TestimonialsAndReviews component
+TestimonialsAndReviews.css
+css
+.testimonials-reviews-section { /* Testimonials and reviews section container styles */
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+}
+
+.testimonials-reviews-section h2 { /* Section heading styles */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.reviews-content { /* Reviews content container styles */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.review-item { /* Single review item styles */
+  background: #f4f4f4;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.review-item p { /* Paragraph styles */
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .review-item {
+    width: 100%;
+  }
+}
+Putting it all together
+Create a App.jsx and App.css to combine all the components and set up routing:
+
+App.jsx
+jsx
+import React from 'react'; // Import React
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Import React Router
+import Navbar from './components/Navbar'; // Import Navbar component
+import HeroHeader from './components/HeroHeader'; // Import HeroHeader component
+import FeaturesList from './components/FeaturesList'; // Import FeaturesList component
+import CTASection from './components/CTASection'; // Import CTASection component
+import Footer from './components/Footer'; // Import Footer component
+import AboutSection from './components/AboutSection'; // Import AboutSection component
+import TeamSection from './components/TeamSection'; // Import TeamSection component
+import BenefitsSection from './components/BenefitsSection'; // Import BenefitsSection component
+import StatsSection from './components/StatsSection'; // Import StatsSection component
+import TestimonialSection from './components/TestimonialSection'; // Import TestimonialSection component
+import PortfolioListSection from './components/PortfolioListSection'; // Import PortfolioListSection component
+import FeatureSection from './components/FeatureSection'; // Import FeatureSection component
+import GallerySection from './components/GallerySection'; // Import GallerySection component
+import ContactForm from './components/ContactForm'; // Import ContactForm component
+import LiveChatSupport from './components/LiveChatSupport'; // Import LiveChatSupport component
+import SecureLogin from './components/SecureLogin'; // Import SecureLogin component
+import Dashboard from './components/Dashboard'; // Import Dashboard component
+import SupportTickets from './components/SupportTickets'; // Import SupportTickets component
+import BillingInformation from './components/BillingInformation'; // Import BillingInformation component
+import EventsCalendar from './components/EventsCalendar'; // Import EventsCalendar component
+import ResourceCenter from './components/ResourceCenter'; // Import ResourceCenter component
+import FAQs from './components/FAQs'; // Import FAQs component
+import NewsletterSignup from './components/NewsletterSignup'; // Import NewsletterSignup component
+import TestimonialsAndReviews from './components/TestimonialsAndReviews'; // Import TestimonialsAndReviews component
+import './App.css'; // Import CSS for App
+
+const App = () => {
+  return (
+    <Router>
+      <div className="app">
+        <Navbar /> {/* Navbar component */}
+        <Switch>
+          <Route exact path="/" component={HeroHeader} /> {/* Route for Home Page */}
+          <Route path="/about-us" component={AboutSection} /> {/* Route for About Us Page */}
+          <Route path="/services" component={FeaturesList} /> {/* Route for Services Page */}
+          <Route path="/portfolio" component={PortfolioListSection} /> {/* Route for Portfolio Page */}
+          <Route path="/contact-us" component={ContactForm} /> {/* Route for Contact Us Page */}
+          <Route path="/dashboard" component={Dashboard} /> {/* Route for Dashboard Page */}
+          <Route path="/support-tickets" component={SupportTickets} /> {/* Route for Support Tickets Page */}
+          <Route path="/billing-information" component={BillingInformation} /> {/* Route for Billing Information Page */}
+          <Route path="/events-calendar" component={EventsCalendar} /> {/* Route for Events Calendar Page */}
+          <Route path="/resource-center" component={ResourceCenter} /> {/* Route for Resource Center Page */}
+          <Route path="/faqs" component={FAQs} /> {/* Route for FAQs Page */}
+          <Route path="/newsletter-signup" component={NewsletterSignup} /> {/* Route for Newsletter Signup Page */}
+          <Route path="/testimonials-reviews" component={TestimonialsAndReviews} /> {/* Route for Testimonials and Reviews Page */}
+        </Switch>
+        <CTASection /> {/* CTASection component */}
+        <Footer /> {/* Footer component */}
+      </div>
+    </Router>
+  );
+};
+
+export default App; // Export App component
+App.css
+css
+.app { /* App container styles */
+  font-family: Arial, sans-serif;
+}
+
+@media (max-width: 768px) { /* Responsive styles for mobile */
+  .app {
+    padding: 1rem;
+  }
+}
